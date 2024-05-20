@@ -1,23 +1,44 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import "./calendar.css"
 import './App.css';
 
 function App() {
+  const [date, setDate] = useState(new Date());
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <div className='app'>
+      <h1 className='text-center'>Rezervace</h1>
+      <div className='calendar-container'>
+        <Calendar
+          onChange={setDate}
+          value={date}
+          selectRange={true}
+          minDate={new Date(2024, 1, 1)}
+          nextLabel='měsíc>>'
+          nextAriaLabel='Přejít na další měsíc'
+          next2Label='rok>>'
+          next2AriaLabel='Přejít na další rok'
+          prevLabel='<<měsíc'
+          prevAriaLabel='Přejít na předchozí měsíc'
+          prev2Label='<<rok'
+          prev2AriaLabel='Přejít na předchozí rok'
+        />
+      </div>
+      {date.length > 0 ? (
+        <p className='text-center'>
+          <span className='bold'>Příjezd:</span>{' '}
+          {date[0].toDateString()}
+          &nbsp;|&nbsp;
+          <span className='bold'>Odjezd:</span> {date[1].toDateString()}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      ) : (
+        <p className='text-center'>
+          <span className='bold'>Vybrané datum:</span>{' '}
+          {date.toDateString()}
+        </p>
+      )}
     </div>
   );
 }
