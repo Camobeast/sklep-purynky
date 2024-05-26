@@ -72,6 +72,38 @@
     <footer class="footer">
       &copy; 2024 Sklep Púrynky. All Rights Reserved.
     </footer>
-    <script src="main.js"></script>
+    <script>
+      // Lightbox functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("DOM fully loaded and parsed"); // Initial debug log
+
+        const galleryItems = document.querySelectorAll(".gallery-item");
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.querySelector(".close");
+
+        console.log(galleryItems); // Check if gallery items are selected correctly
+
+        galleryItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            console.log("Image clicked:", this.src); // Log on image click
+            lightbox.style.display = "block";
+            lightboxImg.src = this.src;
+          });
+        });
+
+        closeBtn.addEventListener("click", function () {
+          console.log("Close button clicked"); // Log on close button click
+          lightbox.style.display = "none";
+        });
+
+        lightbox.addEventListener("click", function (event) {
+          console.log("Lightbox clicked"); // Log on lightbox click
+          if (event.target !== lightboxImg) {
+            lightbox.style.display = "none";
+          }
+        });
+      });
+    </script>
   </body>
 </html>
