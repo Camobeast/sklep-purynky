@@ -19,26 +19,43 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function moveToSlide(index) {
-    // Hide the current slide
     slides[currentIndex].classList.remove("active-slide");
     dots[currentIndex].classList.remove("active");
 
-    // Loop the index
     if (index < 0) {
       index = totalSlides - 1;
     } else if (index >= totalSlides) {
       index = 0;
     }
 
-    // Show the new slide
     slides[index].classList.add("active-slide");
     dots[index].classList.add("active");
-
-    // Update the current index
     currentIndex = index;
   }
 
-  // Initialize the carousel with the first slide visible
   slides[currentIndex].classList.add("active-slide");
   dots[currentIndex].classList.add("active");
+
+  // Lightbox functionality
+  const galleryItems = document.querySelectorAll(".gallery-item");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector(".close");
+
+  galleryItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      lightbox.style.display = "block";
+      lightboxImg.src = this.src;
+    });
+  });
+
+  closeBtn.addEventListener("click", function () {
+    lightbox.style.display = "none";
+  });
+
+  lightbox.addEventListener("click", function (event) {
+    if (event.target !== lightboxImg) {
+      lightbox.style.display = "none";
+    }
+  });
 });
