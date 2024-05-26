@@ -25,40 +25,17 @@
       src="//widget.simplybook.it/v2/widget/widget.js"
       type="text/javascript"
     ></script>
-    <script type="text/javascript">
-      var widget = new SimplybookWidget({
-        widget_type: "iframe",
-        url: "https:\/\/skleppurynky.simplybook.it",
-        theme: "default",
-        theme_settings: {
-          timeline_hide_unavailable: "1",
-          hide_past_days: "0",
-          timeline_show_end_time: "0",
-          timeline_modern_display: "as_slots",
-          sb_base_color: "#7b8a78",
-          display_item_mode: "block",
-          booking_nav_bg_color: "#7b8a78",
-          body_bg_color: "#eff2ee",
-          sb_review_image: "",
-          dark_font_color: "#474747",
-          light_font_color: "#ffffff",
-          btn_color_1: "#b0c3ac",
-          sb_company_label_color: "#474747",
-          hide_img_mode: "1",
-          show_sidebar: "1",
-          sb_busy: "#c7b3b3",
-          sb_available: "#d1f0ff",
-        },
-        timeline: "flexible_week",
-        datepicker: "top_calendar",
-        is_rtl: false,
-        app_config: {
-          clear_session: 0,
-          allow_switch_to_ada: 0,
-          predefined: { provider: "2" },
-        },
-      });
-    </script>
+    <script
+      src="https://rezervacechalup.cz/js/iframeResizer.min.js"
+      type="text/javascript"
+    ></script>
+    <iframe
+      name="rezervace"
+      style="width: 100%; height: auto; background-color: white; border: none"
+      seamless
+      src="https://rezervacechalup.cz/host_rezervace_lite.php?objekt=1716744657&nadpis=ano"
+      onload="iFrameResize({log:false, heightCalculationMethod: 'lowestElement'});"
+    ></iframe>
     <footer class="footer">
       &copy; 2024 Sklep Púrynky. All Rights Reserved.
     </footer>
