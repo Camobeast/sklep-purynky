@@ -27,7 +27,7 @@ body {
 }
 
 .header .item1 {
-  flex: 1; /* Allow the header title to take up available space */
+  flex: 1; 
 }
 
 .header .item2 {
