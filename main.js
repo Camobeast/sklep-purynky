@@ -35,5 +35,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
   slides[currentIndex].classList.add("active-slide");
   dots[currentIndex].classList.add("active");
-
-
+});
