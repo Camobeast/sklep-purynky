@@ -6,6 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars($_POST['email']);
     $guests = htmlspecialchars($_POST['guests']);
     $date = htmlspecialchars($_POST['date']);
+    $nights = htmlspecialchars($_POST['nights']);
 
     $to = 'lilley@email.cz';
     $subject = 'New Reservation Request';
@@ -16,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message .= "Email: $email\n";
     $message .= "Počet hostů: $guests\n";
     $message .= "Termín: $date\n";
+    $message .= "Počet nocí: $nights\n";
 
     $headers = "From: noreply@yourdomain.com";
 
