@@ -53,36 +53,5 @@
     <footer class="footer">
       &copy; 2024 Sklep Za Vinohradem. All Rights Reserved.
     </footer>
-    <script>
-      // Handle form submission
-      const form = document.getElementById("reservation-form");
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        const formData = new FormData(form);
-        const data = {};
-        formData.forEach((value, key) => {
-          data[key] = value;
-        });
-
-        fetch("https://your-backend-endpoint.com/send-email", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        })
-          .then((response) => response.json())
-          .then((result) => {
-            alert("Reservation request sent successfully!");
-          })
-          .catch((error) => {
-            console.error("Error:", error);
-            alert(
-              "There was an error sending your request. Please try again later."
-            );
-          });
-      });
-    </script>
   </body>
 </html>
