@@ -27,7 +27,7 @@ body {
 }
 
 .header .item1 {
-  flex: 1; 
+  flex: 1;
 }
 
 .header .item2 {
@@ -341,6 +341,62 @@ body {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* Form Styles */
+form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nadpis {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  color: white;
+  background-color: #039a5a;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="number"],
+form input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+form button {
+  background-color: #04aa6d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  justify-self: center;
+}
+
+form button:hover {
+  background-color: #039a5a;
 }
 
 /* Footer Styles */
