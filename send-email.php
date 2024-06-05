@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $date = htmlspecialchars($_POST['date']);
     $nights = htmlspecialchars($_POST['nights']);
 
-    $to = 'lilley@email.cz';
+    $to = 'zavinohradem@seznam.cz';
     $subject = 'New Reservation Request';
     $message = "You have a new reservation request:\n\n";
     $message .= "Jméno: $firstName\n";
